@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Times New Roman', serif;
-  background-color: #f4f6f8;
+  background-color: #f4f6f8; 
 }
 
 .Container {
@@ -44,22 +44,15 @@ body {
   margin-top: 20px;
 }
 
-.cta-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1.75rem;
-  color: white;
-  background-color: #272b28;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
-.cta-button:hover {
-  background-color: #4f5852;
-}
+
 
 .right-section {
   text-align: center;
+  background-color: #ffffff; 
+  border: 2px solid #ccc; 
+  border-radius: 10px; 
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
 }
+

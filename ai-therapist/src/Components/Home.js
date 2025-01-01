@@ -1,21 +1,25 @@
 import React from 'react';
-import './index.css';
-import ChatPage from './ChatPage';
+import { useNavigate } from 'react-router-dom';
 
-function App() {
+function Home() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/chat');
+  };
+
   return (
     <div className="Container">
       <div className="left-section">
         <h1 className="main-heading">TherapyAI</h1>
         <p className="sub-heading">Your very own AI Therapist!</p>
-        
+        <button className="cta-button" onClick={handleClick}>
+          Get Started!
+        </button>
         <p className="footer-text">© 2024 AI Therapist | Empowering Minds</p>
-      </div>
-      <div className="right-section">
-        <ChatPage />
       </div>
     </div>
   );
 }
 
-export default App;
+export default Home;
