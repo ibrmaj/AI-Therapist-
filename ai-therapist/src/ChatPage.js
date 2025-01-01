@@ -1,17 +1,35 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./ChatPage.css";
 
 const ChatPage = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (input.trim()) {
-      setMessages([
-        ...messages,
-        { sender: "user", text: input },
-        { sender: "bot", text: "I'm here to help. What's on your mind?" },
-      ]);
+      // Add user message to the chat
+      setMessages([...messages, { sender: "user", text: input }]);
+  
+      try {
+        const response = await axios.post("http://127.0.0.1:5000/api/chat", {
+          message: input,
+        });
+        // Using this for testing purposes lol
+        console.log("Backend response:", response.data); 
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { sender: "bot", text: response.data.bot_message },
+        ]);
+      } catch (error) {
+        // testing cuz the heck, I NEED TO KNOW THE ERROR
+        console.error("Error sending message:", error); 
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { sender: "bot", text: "Sorry, an error occurred." },
+        ]);
+      }
+  
       setInput("");
     }
   };
@@ -57,4 +75,3 @@ const ChatPage = () => {
 };
 
 export default ChatPage;
-

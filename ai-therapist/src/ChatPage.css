@@ -16,6 +16,7 @@
     padding: 10px 15px;
     border-radius: 10px;
     line-height: 1.4;
+    text-align: left;
   }
   
   .message.user {
@@ -28,6 +29,7 @@
     align-self: flex-start;
     background-color: #c1bbbb;
     color: #333;
+    text-align: left;
   }
   
   .chat-input-container {
