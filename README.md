@@ -5,7 +5,7 @@ A simple AI-powered chatbot designed to provide conversational support and simul
 ---
 
 ## **Demo**
-![AI Therapist Chatbot Demo](path/to/your/demo.gif)
+![AI Therapist Chatbot Demo](img/therapist%20demo%20.gif)
 
 ## **Features**
 - **Interactive Chat Interface**: Seamless user conversations with real-time responses.
